@@ -4,16 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "prooftrace-forensics"
-version = "0.1.0"
+version = "0.2.0"
 description = "Local-first digital evidence and document forensics toolkit"
 readme = "README.md"
 requires-python = ">=3.12"
 license = { file = "LICENSE" }
 authors = [{ name = "Guilherme Lourenco" }]
-dependencies = []
+dependencies = ["pypdf>=5.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.6"]
+
+[project.scripts]
+prooftrace = "prooftrace.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
